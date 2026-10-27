@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: iv1351-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: iv1351
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/sql
+
+volumes:
+  pgdata:
